@@ -1,7 +1,3 @@
-data "aws_eks_cluster" "cluster" {
-  name = aws_eks_cluster.main.name
-}
-
 data "aws_eks_cluster_auth" "cluster" {
   name = aws_eks_cluster.main.name
 
@@ -11,7 +7,7 @@ data "aws_eks_cluster_auth" "cluster" {
 }
 
 output "kubeconfig" {
-  value = data.aws_eks_cluster.cluster.kubeconfig
+  value = data.aws_eks_cluster_auth.cluster.kubeconfig
 }
 
 output "cluster_name" {
