@@ -33,7 +33,7 @@ resource "aws_iam_role_policy_attachment" "eks" {
 
 resource "aws_launch_template" "main" {
   name_prefix = "eks-node-"
-  image_id    = "ami-0c55b159cbfafe1f0"
+  image_id    = "ami-0fcf52bcf5db7b003"
   instance_type = var.instance_type
   key_name = "my-key-pair"
 
