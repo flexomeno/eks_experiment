@@ -1,11 +1,11 @@
 module "vpc" {
-  source = "./modules/vpc1"
+  source = "./modules/vpc"
 
   vpc_cidr_block = "10.0.0.0/16"
 }
 
 module "eks" {
-  source = "./modules/eks1"
+  source = "./modules/eks"
 
   vpc_id        = module.vpc.vpc_id
   subnets       = [module.vpc.public_subnet_ids[0], module.vpc.public_subnet_ids[1], module.vpc.public_subnet_ids[2]]
