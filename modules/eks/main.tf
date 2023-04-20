@@ -31,6 +31,11 @@ resource "aws_iam_role_policy_attachment" "eks" {
   role       = aws_iam_role.eks.name
 }
 
+resource "aws_key_pair" "my_key_pair" {
+  key_name   = "my-key-pair"
+  public_key = file("~/.ssh/my-key-pair.pub")
+}
+
 resource "aws_launch_template" "main" {
   name_prefix = "eks-node-"
   image_id    = "ami-0fcf52bcf5db7b003"
