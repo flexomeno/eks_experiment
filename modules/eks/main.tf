@@ -33,7 +33,7 @@ resource "aws_iam_role_policy_attachment" "eks" {
 
 resource "aws_key_pair" "my_key_pair" {
   key_name   = "my-key-pair"
-  public_key = file("~/.ssh/my-key-pair.pub")
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 resource "aws_launch_template" "main" {
