@@ -11,4 +11,7 @@ module "eks" {
   subnets       = [module.vpc.public_subnet_ids[0], module.vpc.public_subnet_ids[1], module.vpc.public_subnet_ids[2]]
   cluster_name  = "eks-cluster"
   instance_type = "t2.micro"
+  desired_capacity = "2"
+  max_size = "3"
+  min_size = "1"
 }
